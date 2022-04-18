@@ -2,5 +2,8 @@
 
 int main()
 {
-	GetPerfectNumberBeetween1And500();
+
+	//GetPerfectNumberBeetween1And500();
+	//IsPrimeNumer();
+	//GetPrimenumberRange();
 }
