@@ -166,5 +166,19 @@ void GetPrimenumberRange()
 
 }
 
+void GetFactorial()
+{
+	int input;
+	cout << "Input a number to find the factorial : " << endl;
+	cin >> input;
+	assert(input > 0);
+	int res = 1;
+	for (int i = 1; i <= input; ++i)
+	{
+		res *= i;
+	}
 
+	cout <<  input << "'s Factorial is : " << res << endl;
+
+}
 
