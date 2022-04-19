@@ -1,6 +1,8 @@
 #include <iostream>
 #include <assert.h>
 #include "Exercises.h"
+
+#define NONE (-1)
 using namespace std;
 void GetPerfectNumberBeetween1And500()
 {
@@ -27,7 +29,7 @@ void GetPerfectNumberBeetween1And500()
 		}
 	}
 
-	cout << "reapeat count is " << repeatCount << endl;
+	std::cout << "reapeat count is " << repeatCount << endl;
 #endif
 	// Answer Code 
 #if 0
@@ -65,8 +67,8 @@ void IsPrimeNumer()
 	// 내 코드가 정답코드보다 더 복잡하지만, 반복횟수는 더 적다.
 	// 뭐가 더 맞는 방법인지는... 모르겠옹
 	int input;
-	cout << "enter you would like to know is prime number : " << endl;
-	cin >> input;
+	std::cout << "enter you would like to know is prime number : " << endl;
+	std::cin >> input;
 	assert(input >= 1);
 	int measure = 0;
 	bool isMeetMeasure = false;
@@ -74,12 +76,13 @@ void IsPrimeNumer()
 	{
 		if (input % i == 0 && i != input)
 		{
-			cout << input << " is a NOT PRIME NUMBER!!" << endl;
+			std::cout << input << " is a NOT PRIME NUMBER!!" << endl;
 			return;
 
-		} else if (i == input)
+		} 
+		else if (i == input)
 		{
-			cout << input << " is a PRIME NUMBER!!!" << endl;
+			std::cout << input << " is a PRIME NUMBER!!!" << endl;
 			return;
 		}
 	}
@@ -111,10 +114,10 @@ void IsPrimeNumer()
 void GetPrimenumberRange()
 {
 	int start, end;
-	cout << "enter start range : " << endl;
-	cin >> start;
-	cout << "enter end range : " << endl;
-	cin >> end;
+	std::cout << "enter start range : " << endl;
+	std::cin >> start;
+	std::cout << "enter end range : " << endl;
+	std::cin >> end;
 	assert(start < end && start > 0);
 
 	for (int i = start; i <= end; ++i)
@@ -127,7 +130,7 @@ void GetPrimenumberRange()
 			}
 			else if (divisor == i)
 			{
-				cout << i << " is a PRIME NUMBER" << endl;
+				std::cout << i << " is a PRIME NUMBER" << endl;
 				break;
 			}
 		}
@@ -155,12 +158,12 @@ void GetPrimenumberRange()
 		if (ctr == 0 && i != 1)
 		{
 			fnd++;
-			cout << i << " ";
+			std::cout << i << " ";
 
 		}
 		ctr = 0;
 	}
-	cout << "\n\n The total number of prime numbers between " << num1 << " to " << num2 << " is: " << fnd << endl;
+	std::cout << "\n\n The total number of prime numbers between " << num1 << " to " << num2 << " is: " << fnd << endl;
 
 #endif
 
@@ -169,8 +172,8 @@ void GetPrimenumberRange()
 void GetFactorial()
 {
 	int input;
-	cout << "Input a number to find the factorial : " << endl;
-	cin >> input;
+	std::cout << "Input a number to find the factorial : " << endl;
+	std::cin >> input;
 	assert(input > 0);
 	int res = 1;
 	for (int i = 1; i <= input; ++i)
@@ -178,7 +181,51 @@ void GetFactorial()
 		res *= i;
 	}
 
-	cout <<  input << "'s Factorial is : " << res << endl;
+	std::cout <<  input << "'s Factorial is : " << res << endl;
 
 }
 
+/*
+8. Write a program in C++ to find the last prime number occur before the entered number.
+Sample Output:
+Input a number to find the last prime number occurs before the number: 50
+47 is the last prime number before 50
+*/
+void GetLastPrimeNumber()
+{
+	int input;
+	std::cout << "Input a number to find the last prime number occurs before the number:" << endl;
+	std::cin >> input;
+	
+	assert(input > 0);
+
+	int result = GetPrimeNumberRecursive(input - 1);
+
+	(result == NONE) ? (std::cout << input <<" before PRIME NUMBER Dosen't exist." << endl) : (std::cout << result << " is the last prime number before " << input << endl);
+
+}
+int GetPrimeNumberRecursive(int input)
+{
+	if (input <= 1)
+	{
+		return NONE;
+	}
+
+	for (int i = 2; i <= input; ++i)
+	{
+		if (input % i == 0 && i != input)
+		{
+			break;
+		}
+		else if (i == input)
+		{
+			return i;
+		}
+		else
+		{
+			continue;
+		}
+	}
+	GetPrimeNumberRecursive(input - 1);
+
+}
