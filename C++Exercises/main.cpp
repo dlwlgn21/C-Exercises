@@ -8,5 +8,7 @@ int main()
 	//GetPrimenumberRange();
 	//GetFactorial();
 	// 재귀함수로 올바르게 짰는지 궁금합니다. 
-	GetLastPrimeNumber();
+	//GetLastPrimeNumber();
+
+	GetGreatestCommonDivisorOfTwoNumbers();
 }

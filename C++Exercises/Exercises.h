@@ -6,3 +6,4 @@ void GetPrimenumberRange();
 void GetFactorial();
 int GetPrimeNumberRecursive(int input);
 void GetLastPrimeNumber();
+void GetGreatestCommonDivisorOfTwoNumbers();

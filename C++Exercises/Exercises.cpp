@@ -231,3 +231,51 @@ int GetPrimeNumberRecursive(int input)
 	GetPrimeNumberRecursive(input - 1);
 
 }
+
+/*
+9. Write a program in C++ to find the Greatest Common Divisor (GCD) of two numbers. Go to the editor
+Sample Output:
+Input the first number: 25
+Input the second number: 15
+The Greatest Common Divisor is: 5
+*/
+
+void GetGreatestCommonDivisorOfTwoNumbers()
+{
+	int firstNum, secondNum;
+
+	std::cout << "find the Greatest Common Divisor (GCD) of two numbers" << std::endl;
+	
+	std::cout << "Input the first number : " << std::endl;
+	std::cin >> firstNum;
+	assert(firstNum > 0);
+
+	std::cout << "Input the second number : " << std::endl;
+	std::cin >> secondNum;
+	assert(secondNum > 0);
+	int max, min;
+	if (firstNum - secondNum > 0)
+	{
+		max = firstNum;
+		min = secondNum;
+	}
+	else
+	{
+		max = secondNum;
+		min = firstNum;
+	}
+
+
+	for (int i = min; i > 1; --i)
+	{
+		if (max % i == 0 && min % i == 0)
+		{
+			std::cout << max << " between " << min << " GCD is " << i << std::endl;
+			return;
+		}
+	}
+
+	std::cout << max << " between " << min << " GCD is NOT EXIST " << std::endl;
+
+
+}
