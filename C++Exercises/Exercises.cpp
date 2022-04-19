@@ -201,7 +201,9 @@ void GetLastPrimeNumber()
 
 	int result = GetPrimeNumberRecursive(input - 1);
 
-	(result == NONE) ? (std::cout << input <<" before PRIME NUMBER Dosen't exist." << endl) : (std::cout << result << " is the last prime number before " << input << endl);
+	(result == NONE) ? 
+	std::cout << input <<" before PRIME NUMBER Dosen't exist." << endl : 
+	std::cout << result << " is the last prime number before " << input << endl;
 
 }
 int GetPrimeNumberRecursive(int input)
