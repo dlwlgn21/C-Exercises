@@ -10,5 +10,9 @@ int main()
 	// 재귀함수로 올바르게 짰는지 궁금합니다. 
 	//GetLastPrimeNumber();
 
-	GetGreatestCommonDivisorOfTwoNumbers();
+	//GetGreatestCommonDivisorOfTwoNumbers();
+	//GetSumOfDigit();
+	//GetSumOfTheSerise();
+	//GetCalculateTheSumOfTheSeries();
+	GetCalculateTheSeries();
 }

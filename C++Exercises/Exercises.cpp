@@ -4,6 +4,12 @@
 
 #define NONE (-1)
 using namespace std;
+
+void InputNumber(int& input, const char* msg)
+{
+	std::cout << msg << std::endl;
+	std::cin >> input;
+}
 void GetPerfectNumberBeetween1And500()
 {
 	const int END = 500;
@@ -206,7 +212,7 @@ void GetLastPrimeNumber()
 	std::cout << result << " is the last prime number before " << input << endl;
 
 }
-int GetPrimeNumberRecursive(int input)
+static int GetPrimeNumberRecursive(int input)
 {
 	if (input <= 1)
 	{
@@ -278,4 +284,123 @@ void GetGreatestCommonDivisorOfTwoNumbers()
 	std::cout << max << " between " << min << " GCD is NOT EXIST " << std::endl;
 
 
+}
+/*
+10. Write a program in C++ to find the sum of digits of a given number. Go to the editor
+Sample Output:
+Input a number: 1234
+The sum of digits of 1234 is: 10
+*/
+static int GetSumRecursive(int num, int& res)
+{
+	if (num == 0)
+	{
+		return 0;
+	}
+
+	res += (num % 10);
+	GetSumRecursive(num / 10, res);
+}
+
+void GetSumOfDigit()
+{
+	int input;
+	InputNumber(input, "Input Number: ");
+	int res{};
+	GetSumRecursive(input, res);
+	std::cout << "The sum of digits of " << input << " is: [" << res << "]" << std::endl;
+
+}
+
+/*
+11. Write a program in C++ to find the sum of the series 1 + 1/2^2 + 1/3^3 + ..+ 1/n^n. Go to the editor
+Sample Output:
+Input the value for nth term: 5
+1/1^1 = 1
+1/2^2 = 0.25
+1/3^3 = 0.037037
+1/4^4 = 0.00390625
+1/5^5 = 0.00032
+The sum of the above series is: 1.29126
+*/
+void GetSumOfTheSerise()
+{
+	int input;
+	InputNumber(input, "Input the value for nth term");
+	double res{};
+	int multi{ 1 };
+	for (int i = 1; i <= input; ++i)
+	{
+		for (int j = 1; j <= i; ++j)
+		{
+			multi *= i;
+		}
+		res += (double)1 / multi;
+		multi = 1;
+	}
+	
+	std::cout << "The sum of the above series is: " << res << std::endl;
+
+}
+/*
+12. Write a program in C++ to calculate the sum of the series (1*1) + (2*2) + (3*3) + (4*4) + (5*5) + ... + (n*n). Go to the editor
+Sample Output:
+Input the value for nth term: 5
+1*1 = 1
+2*2 = 4
+3*3 = 9
+4*4 = 16
+5*5 = 25
+The sum of the above series is: 55
+*/
+
+void GetCalculateTheSumOfTheSeries()
+{
+	int input;
+	InputNumber(input, "Input the value for nth term :");
+	int res{};
+	for (int i = 1; i <= input; ++i)
+	{
+		res += i * i;
+		std::cout << i << " * " << i << " = " << i * i << std::endl;
+	}
+	std::cout << "The sum of the above series is: " << res << std::endl;
+}
+/*
+13. Write a program in C++ to calculate the series (1) + (1+2) + (1+2+3) + (1+2+3+4) + ... + (1+2+3+4+...+n). Go to the editor
+Sample Output:
+Input the value for nth term: 5
+1 = 1
+1+2 = 3
+1+2+3 = 6
+1+2+3+4 = 10
+1+2+3+4+5 = 15
+The sum of the above series is: 35
+*/
+
+void GetCalculateTheSeries()
+{
+	int input;
+	InputNumber(input, "Input the value for nth term: ");
+	int res{};
+	int sum{};
+	for (int i = 1; i <= input; ++i)
+	{
+		int j;
+		for (j = 1; j <= i; ++j)
+		{
+			res += j;
+			cout << j;
+			if (j < i)
+			{
+				cout << " + ";
+			}
+		}
+		cout << " = " << res << endl;
+		sum += res;
+
+		res = 0;
+	}
+
+	std::cout << "The sum of the above series is: " << sum << std::endl;
 }
