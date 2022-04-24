@@ -389,18 +389,19 @@ void GetCalculateTheSeries()
 		int j;
 		for (j = 1; j <= i; ++j)
 		{
-			res += j;
-			cout << j;
-			if (j < i)
+			std::cout << j;
+			if (j < i) 
 			{
-				cout << " + ";
+				std::cout << " + ";
 			}
+			res += j;
 		}
-		cout << " = " << res << endl;
+		std::cout << " = " << res << std::endl;
 		sum += res;
-
 		res = 0;
 	}
 
 	std::cout << "The sum of the above series is: " << sum << std::endl;
 }
+
+
