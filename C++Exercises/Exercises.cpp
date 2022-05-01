@@ -1383,3 +1383,156 @@ Sample Output:
 	 4 5 6
 	7 8 9 10
 */
+
+void Print39()
+{
+
+	int rows;
+
+	InputNumber(rows, "Input Rows To Draw : ");
+
+	int drawNum = 0;
+
+	for (int i = 1; i <= rows; ++i)
+
+	{
+
+		int spaceCol = rows - i;
+
+		int numCol = i;
+
+		for (int j = 1; j <= spaceCol; ++j)
+
+		{
+
+			std::cout << " ";
+
+		}
+
+		for (int z = 1; z <= numCol; ++z)
+
+		{
+
+			std::cout << ++drawNum << " ";
+
+		}
+
+		std::cout << std::endl;
+
+	}
+
+}
+
+void Print40()
+{
+
+	int rows;
+
+	InputNumber(rows, "Input Number To Draw :");
+
+	for (int i = 1; i <= rows; ++i)
+
+	{
+
+		int spaceCol = rows - i;
+
+		int asterikeCol = i;
+
+		for (int j = 0; j < spaceCol; ++j)
+
+		{
+
+			std::cout << " ";
+
+		}
+
+		for (int z = 0; z < asterikeCol; ++z)
+
+		{
+
+			std::cout << "*" << " ";
+
+		}
+
+		std::cout << std::endl;
+
+	}
+
+}
+
+void Print41()
+{
+
+	int rows;
+
+	InputNumber(rows, "Input Number To Draw :");
+
+	int outNum{ 1 };
+
+	for (int i = 1; i <= rows; ++i)
+
+	{
+
+		int spaceCol = rows - i;
+
+		int numCol = i;
+
+		for (int j = 0; j < spaceCol; ++j)
+
+		{
+
+			std::cout << " ";
+
+		}
+
+		for (int z = 0; z < numCol; ++z)
+
+		{
+
+			std::cout << outNum << " ";
+
+		}
+
+		std::cout << std::endl;
+
+		++outNum;
+
+	}
+
+}
+
+void Print42()
+{
+
+	int rows;
+
+	InputNumber(rows, "Input Number To Draw :");
+
+	for (int i = 1; i <= rows; ++i)
+
+	{
+
+		int spaceCol = rows - i;
+
+		int numCol = (2 * i) - 1;
+
+		for (int j = 0; j < spaceCol; ++j)
+
+		{
+
+			std::cout << " ";
+
+		}
+
+		for (int z = 0; z < numCol; ++z)
+
+		{
+
+			std::cout << "*";
+
+		}
+
+		std::cout << std::endl;
+
+	}
+}

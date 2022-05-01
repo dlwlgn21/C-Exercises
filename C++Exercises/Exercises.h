@@ -43,3 +43,7 @@ void PrintTriangle();
 void PrintTriangleTwo();
 void PrintTriangleThree();
 void PrintTriangleFour();
+void Print39();
+void Print40();
+void Print41();
+void Print42();
