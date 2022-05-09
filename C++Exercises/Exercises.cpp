@@ -11,7 +11,7 @@ void InputNumber(int& input, const char* msg)
 	if (std::cin >> input)
 	{
 
-	} 
+	}
 	else
 	{
 		std::cout << "Wrong Input" << std::endl;
@@ -22,7 +22,7 @@ void GetPerfectNumberBeetween1And500()
 {
 	const int END = 500;
 	int repeatCount = 0;
-// My Code
+	// My Code
 #if 1
 	for (int i = 2; i <= END; ++i)
 	{
@@ -30,12 +30,12 @@ void GetPerfectNumberBeetween1And500()
 		int res = 0;
 		for (int j = 1; j < i; ++j)
 		{
-			if (res == i && j == i - 1) 
+			if (res == i && j == i - 1)
 			{
 				std::cout << "Perfect Number is " << res << std::endl;
 				break;
 			}
-			if (i % j == 0) 
+			if (i % j == 0)
 			{
 				res += j;
 			}
@@ -91,7 +91,7 @@ void IsPrimeNumer()
 			std::cout << input << " is a NOT PRIME NUMBER!!" << endl;
 			return;
 
-		} 
+		}
 		else if (i == input)
 		{
 			std::cout << input << " is a PRIME NUMBER!!!" << endl;
@@ -130,7 +130,7 @@ void GetPrimenumberRange()
 	std::cin >> start;
 	std::cout << "enter end range : " << endl;
 	std::cin >> end;
-	assert(start < end && start > 0);
+	assert(start < end&& start > 0);
 
 	for (int i = start; i <= end; ++i)
 	{
@@ -193,7 +193,7 @@ void GetFactorial()
 		res *= i;
 	}
 
-	std::cout <<  input << "'s Factorial is : " << res << endl;
+	std::cout << input << "'s Factorial is : " << res << endl;
 
 }
 
@@ -208,14 +208,14 @@ void GetLastPrimeNumber()
 	int input;
 	std::cout << "Input a number to find the last prime number occurs before the number:" << endl;
 	std::cin >> input;
-	
+
 	assert(input > 0);
 
 	int result = GetPrimeNumberRecursive(input - 1);
 
-	(result == NONE) ? 
-	std::cout << input <<" before PRIME NUMBER Dosen't exist." << endl : 
-	std::cout << result << " is the last prime number before " << input << endl;
+	(result == NONE) ?
+		std::cout << input << " before PRIME NUMBER Dosen't exist." << endl :
+		std::cout << result << " is the last prime number before " << input << endl;
 
 }
 static int GetPrimeNumberRecursive(int input)
@@ -257,7 +257,7 @@ void GetGreatestCommonDivisorOfTwoNumbers()
 	int firstNum, secondNum;
 
 	std::cout << "find the Greatest Common Divisor (GCD) of two numbers" << std::endl;
-	
+
 	std::cout << "Input the first number : " << std::endl;
 	std::cin >> firstNum;
 	assert(firstNum > 0);
@@ -344,7 +344,7 @@ void GetSumOfTheSerise()
 		res += (double)1 / multi;
 		multi = 1;
 	}
-	
+
 	std::cout << "The sum of the above series is: " << res << std::endl;
 
 }
@@ -396,7 +396,7 @@ void GetCalculateTheSeries()
 		for (j = 1; j <= i; ++j)
 		{
 			std::cout << j;
-			if (j < i) 
+			if (j < i)
 			{
 				std::cout << " + ";
 			}
@@ -412,7 +412,7 @@ void GetCalculateTheSeries()
 
 
 /*
-14. Write a program in C++ to find the sum of series 
+14. Write a program in C++ to find the sum of series
 1 - X^2/2! + X^4/4!-.... upto nth term.
 Sample Output:
 Input the value of X: 3
@@ -434,7 +434,7 @@ void GetFindTheSumOfSeriesUPToNthTerm()
 	int expo = 2;
 	for (int i = 1; i <= nthTerm; ++i)
 	{
-		if (i % 2 == 0) 
+		if (i % 2 == 0)
 		{
 			res = -res;
 		}
@@ -455,7 +455,7 @@ void GetFindTheSumOfSeriesUPToNthTerm()
 }
 
 /*
-15. Write a program in C++ to asked user to 
+15. Write a program in C++ to asked user to
 input positive integers to process count, maximum, minimum, and average or terminate the process with -1.
 Sample Output:
 Your input is for termination. Here is the result below:
@@ -485,7 +485,7 @@ void GetMaxMinAverage()
 		}
 		max = inputNums[0];
 		min = inputNums[0];
-		
+
 		for (int i = 0; i < numsOfPosInt; ++i)
 		{
 			if (max < inputNums[i])
@@ -510,7 +510,7 @@ void GetMaxMinAverage()
 
 	}
 
-	
+
 }
 
 
@@ -525,7 +525,7 @@ The non-prime numbers are:
 
 void GetNonPrimeNumbers()
 {
-	
+
 	int upperLimit;
 
 	InputNumber(upperLimit, "Input the upperlimit: ");
@@ -545,7 +545,7 @@ void GetNonPrimeNumbers()
 
 		}
 	}
-	
+
 #if 0
 	// 정답코드
 	int ult;
@@ -656,7 +656,7 @@ void PrintMultiplicationVerticaly()
 		std::cout << std::endl;
 	}
 
-	
+
 }
 /*
 20. Write a program in C++ to display the n terms of odd natural number and their sum. Go to the editor
@@ -681,7 +681,7 @@ void GetOddSum()
 	std::cout << std::endl;
 
 	std::cout << "The Sum of odd Natural Numbers upto " << terms << " terms: " << sum << std::endl;
-	
+
 }
 
 /*
@@ -700,7 +700,7 @@ void GetEvenSum()
 	{
 		int res{};
 		res = 2 * i;
-		std::cout << res  << " ";
+		std::cout << res << " ";
 		sum += res;
 
 	}
@@ -788,7 +788,7 @@ void GetNineSumOfTheSeries()
 		out = (out * 10);
 	}
 	std::cout << std::endl;
-	std::cout << "The sum of the series upto " << term <<" terms: " << sum << std::endl;
+	std::cout << "The sum of the series upto " << term << " terms: " << sum << std::endl;
 }
 void GetNineSumOfTheSeriesAnswer()
 {
@@ -947,7 +947,7 @@ void GetSumOfSeriesMysteryThree()
 	int term;
 	InputNumber(term, "Input number of terms: ");
 	int times{ 1 };
-	int sum{0};
+	int sum{ 0 };
 	/*
 	for (int i = 1; i < term; ++i)
 	{
@@ -1032,7 +1032,7 @@ void GetFibonacci()
 	}
 	std::cout << std::endl;
 
-	
+
 }
 /*
 28. Write a program in C++ to find the number and s
@@ -1073,7 +1073,7 @@ void GetFirstLCM()
 	InputNumber(first, "Input 1st number for LCM: ");
 	InputNumber(second, "Input 2nd number for LCM: ");
 	int min = (first < second) ? first : second;
-	int hcf{1};
+	int hcf{ 1 };
 	int lcm{};
 	for (int i = min; i >= 1; --i)
 	{
@@ -1119,7 +1119,7 @@ void GetReverseOrder()
 	int num;
 	InputNumber(num, "Input a number to reverse: ");
 	int cpy = num;
-	int digit {};
+	int digit{};
 	int cut = {};
 	while (cpy != 0)
 	{
@@ -1190,7 +1190,7 @@ void GetAritimeticProgressionSeries()
 			std::cout << " + ";
 		}
 		first += diff;
-		
+
 	}
 
 	std::cout << " = " << sum << std::endl;
@@ -1322,7 +1322,7 @@ void PrintTriangleTwo()
 	}
 }
 /*
-37. Write a program in C++ to make such a pattern like right angle triangle 
+37. Write a program in C++ to make such a pattern like right angle triangle
 using number which will repeat the number for that row.
 Sample Output:
   Input number of rows: 5
@@ -1349,7 +1349,7 @@ void PrintTriangleThree()
 }
 
 /*
-38. Write a program in C++ to make such a pattern like right angle triangle with number increased by 1. 
+38. Write a program in C++ to make such a pattern like right angle triangle with number increased by 1.
 Sample Output:
  Input number of rows: 4
 1
@@ -1535,4 +1535,277 @@ void Print42()
 		std::cout << std::endl;
 
 	}
+}
+
+/*
+43. Write a program in C++ to print the Floyd's Triangle. Go to the editor
+Sample Output:
+ Input number of rows: 5
+1
+01
+101
+0101
+10101
+
+*/
+void Print43()
+{
+	int rows;
+	InputNumber(rows, "Input number of rows: ");
+	int nums[2]{ 0, 1 };
+	for (int i = 1; i <= rows; ++i)
+	{
+		for (int j = 0; j < i; ++j)
+		{
+			if ((i & 0x1) != 0)
+			{
+				std::cout << nums[(j + 1) % 2];
+			}
+			else
+			{
+				std::cout << nums[j % 2];
+			}
+		}
+		std::cout << std::endl;
+	}
+	/* 정답코드
+	   int i,j,n,p,q;
+		cout << "\n\n Print the Floyd's Triangle:\n";
+		cout << "--------------------------------\n";
+		cout << " Input number of rows: ";
+		cin >> n;
+	   for(i=1;i<=n;i++)
+	   {
+		 if(i%2==0)
+		 { 
+		 p=1;q=0;
+		 }
+		 else
+		 { 
+		 p=0;q=1;
+		 }
+		  for(j=1;j<=i;j++)
+		 if(j%2==0)
+			cout<<p;
+		 else
+			cout<<q;
+		 cout<<endl;
+	   }
+	*/
+}
+
+/*
+44. Write a program in C++ to display the pattern like a diamond.
+Sample Output:
+ Input number of rows (half of the diamond): 5
+
+	*
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+	*
+*/
+void Print44()
+{
+	int rows;
+	InputNumber(rows, "Input number of rows (half of the diamond): ");
+
+	for (int i = 1; i <= rows; ++i)
+	{
+		int spaceCol = rows - i;
+		int starCol = (2 * i) - 1;
+		for (int j = 0; j < spaceCol; ++j)
+		{
+			std::cout << " ";
+		}
+		for (int z = 0; z < starCol; ++z)
+		{
+			std::cout << "*";
+		}
+
+		std::cout << std::endl;
+	}
+	int reverseRows = rows - 1;
+	int spaceCol = 0;
+	for (int i = reverseRows; i >= 1; --i)
+	{
+		++spaceCol;
+		int starCol = (2 * i) - 1;
+		for (int j = 0; j < spaceCol; ++j)
+		{
+			std::cout << " ";
+		}
+		for (int z = 0; z < starCol; ++z)
+		{
+			std::cout << "*";
+		}
+
+		std::cout << std::endl;
+	}
+	/* 정답코드
+		int i,j,r;
+		cout << "\n\n Display the pattern like a diamond:\n";
+		cout << "----------------------------------------\n";
+		cout << " Input number of rows (half of the diamond): ";
+		cin >> r;
+		for(i=0;i<=r;i++)
+		{
+			for(j=1;j<=r-i;j++)
+			cout<<" ";
+			for(j=1;j<=2*i-1;j++)
+			cout<<"*";
+			cout<<endl;
+	   }
+	   for(i=r-1;i>=1;i--)
+	   {
+		 for(j=1;j<=r-i;j++)
+			cout<<" ";
+			for(j=1;j<=2*i-1;j++)
+		   cout<<"*";
+		 cout<<endl;;
+	   }
+
+
+	*/
+}
+/*
+45. Write a program in C++ to display Pascal's triangle like pyramid. Go to the editor
+Sample Output:
+ Input number of rows: 5
+		  1
+		1   1
+	  1   2   1
+	1   3   3   1
+  1   4   6   4   1
+
+
+
+	1	5	10	10	 5	 1
+  1   6	 15	  20  15  6    1
+*/
+
+void PrintPascalTriangle45()
+{
+	int rows;
+	InputNumber(rows, "Input number of rows: ");
+	int** tdArray = new int*[rows];
+
+	for (int i = 0; i < rows; ++i)
+	{
+		tdArray[i] = new int[rows];
+	}
+	const int ONE = 1;
+
+	for (int i = 0; i < rows; ++i)
+	{
+		for (int j = 0; j <= i; ++j)
+		{
+			if (j > 0 && j != i)
+			{
+				tdArray[i][j] = tdArray[i - 1][j - 1] + tdArray[i - 1][j];
+				
+			}
+			else
+			{
+				tdArray[i][j] = ONE;
+			}
+		}
+	}
+	for (int i = 0; i < rows; ++i)
+	{
+		int spaceCol = (rows - i) + 1;
+		int outCol = i + 1;
+
+		for (int j = 0; j < spaceCol; ++j)
+		{
+			std::cout << " ";
+		}
+
+		for (int z = 0; z < outCol; ++z)
+		{
+			std::cout << tdArray[i][z] << " ";
+		}
+
+		std::cout << std::endl;
+	}
+
+}
+
+void PrintPascalAnswer45()
+{
+	int row, c = 1, blk, i, j;
+	cout << "\n\n Display the Pascal's triangle:\n";
+	cout << "-----------------------------------\n";
+	cout << " Input number of rows: ";
+	cin >> row;
+	for (i = 0; i < row; i++)
+	{
+		for (blk = 1; blk <= row - i; blk++)
+			cout << "  ";
+		for (j = 0; j <= i; j++)
+		{
+			if (j == 0 || i == 0)
+				c = 1;
+			else
+				c = c * (i - j + 1) / j;
+			cout << c << "   ";
+		}
+		cout << endl;
+	}
+}
+
+
+/*
+46. Write a program in C++ to display Pascal's triangle like right angle traingle.
+Sample Output:
+ Input number of rows: 7
+1
+1   1
+1   2   1
+1   3   3   1
+1   4   6   4   1
+1   5   10   10   5   1
+1   6   15   20   15   6   1
+Click me to see the sample solution
+*/
+void PrintPascalTriangle46()
+{
+	int rows;
+	InputNumber(rows, "Input number of rows: ");
+	int** tdArray = new int* [rows];
+
+	for (int i = 0; i < rows; ++i)
+	{
+		tdArray[i] = new int[rows];
+	}
+	const int ONE = 1;
+
+	for (int i = 0; i < rows; ++i)
+	{
+		for (int j = 0; j <= i; ++j)
+		{
+			if (j > 0 && j != i)
+			{
+				tdArray[i][j] = tdArray[i - 1][j - 1] + tdArray[i - 1][j];
+
+			}
+			else
+			{
+				tdArray[i][j] = ONE;
+			}
+		}
+	}
+	for (int i = 0; i < rows; ++i)
+	{
+		for (int j = 0; j <= i; ++j)
+		{
+			std::cout << tdArray[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+
 }

@@ -47,3 +47,8 @@ void Print39();
 void Print40();
 void Print41();
 void Print42();
+void Print43();
+void Print44();
+void PrintPascalTriangle45();
+void PrintPascalAnswer45();
+void PrintPascalTriangle46();
