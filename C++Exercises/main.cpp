@@ -80,5 +80,5 @@ int main()
 
 	}
 #endif
-	PrintPascalTriangle45();
+	Print47();
 }

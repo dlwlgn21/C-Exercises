@@ -52,3 +52,4 @@ void Print44();
 void PrintPascalTriangle45();
 void PrintPascalAnswer45();
 void PrintPascalTriangle46();
+void Print47();

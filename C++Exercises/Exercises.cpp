@@ -1809,3 +1809,52 @@ void PrintPascalTriangle46()
 	}
 
 }
+
+/*
+47. Write a program in C++ to display such a pattern for n number of rows using number. 
+Each row will contain odd numbers of number. 
+The first and last number of each row will be 1 and middle column will be the row number. 
+Sample Output:
+
+ Input number of rows: 5
+
+	1
+   121
+  12321
+ 1234321
+123454321
+
+*/
+
+void Print47()
+{
+	int rows;
+	InputNumber(rows, "Input number of rows: ");
+
+	for (int i = 0; i < rows; ++i)
+	{
+		int spaceCol = rows - i - 1;
+		int outCol = (i + 1) * 2 - 1;
+
+		for (int j = 0; j < spaceCol; ++j)
+		{
+			std::cout << " ";
+		}
+		int midNum = (outCol / 2) + 1;
+		int outNum = midNum;
+		for (int z = 0; z < outCol; ++z)
+		{
+			if (z >= midNum)
+			{
+				outNum -= 1;
+				std::cout << outNum;
+			}
+			else
+			{
+				std::cout << z + 1;
+			}
+		}
+
+		std::cout << std::endl;
+	}
+}
