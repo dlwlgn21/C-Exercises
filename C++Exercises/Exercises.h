@@ -56,3 +56,7 @@ void Print47();
 void Print48();
 void Print49();
 void Print50();
+void Print51();
+void Print52();
+void Print53();
+void Print54();

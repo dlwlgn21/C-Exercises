@@ -1979,3 +1979,145 @@ void Print50()
 	}
 
 }
+
+/*
+
+51. Write a program in C++ to display the pattern 
+using digits with right justified and the highest columns appears in first row.
+Sample Output:
+ Input number of rows: 5
+12345
+ 1234
+  123
+   12
+	1
+*/
+void Print51()
+{
+	int rows;
+	InputNumber(rows, "Input number of rows: ");
+
+	for (int i = 0; i < rows; ++i)
+	{
+		for (int j = 0; j < i; ++j)
+		{
+			std::cout << " ";
+		}
+
+		for (int j = 1; j <= rows - i; ++j)
+		{
+			std::cout << j;
+		}
+
+		std::cout << std::endl;
+	}
+}
+
+
+/*
+52. Write a program in C++ to display the pattern
+using digits with left justified and the highest columns appears in first row in descending order. 
+Sample Output:
+ Input number of rows: 5
+5 4 3 2 1
+4 3 2 1
+3 2 1
+2 1
+1
+*/
+void Print52()
+{
+	int rows;
+	InputNumber(rows, "Input number of rows: ");
+
+	for (int i = 0; i < rows; ++i)
+	{
+		for (int j = rows - i; j > 0; --j)
+		{
+			std::cout << j << " ";
+		}
+		std::cout << std::endl;
+	}
+}
+
+
+/*
+53. Write a program in C++ to display the pattern 
+like right angle triangle with right justified using digits.
+Sample Output:
+ Input number of rows: 5
+	1
+   21
+  321
+ 4321
+54321
+*/
+
+void Print53()
+{
+	int rows;
+	InputNumber(rows, "Input number of rows: ");
+
+	for (int i = 0; i < rows; ++i)
+	{
+		for (int j = 0; j < rows - i - 1; ++j)
+		{
+			std::cout << " ";
+		}
+		for (int j = i + 1; j > 0; --j)
+		{
+			std::cout << j; 
+		}
+		std::cout << std::endl;
+
+	}
+}
+/*
+54. Write a program in C++ to display the pattern power of 2, triangle.
+Sample Output:
+
+Display the pattern like pyramid with power of 2:
+------------------------------------------------------
+ Input the number of rows:
+				 1
+			  1  2  1
+		   1  2  4  2  1
+        1  2  4  8  4  2  1
+	 1  2  4  8  16  8  4  2  1
+
+*/
+void Print54()
+{
+	int rows;
+	InputNumber(rows, "Input the number of rows: ");
+
+	for (int i = 0; i < rows; ++i)
+	{
+		for (int j = 0; j < 2 * (rows - i); ++j)
+		{
+			std::cout << " ";
+		}
+		int out = 1;
+		int repeatCount = 2 * i + 1;
+		int middleCount = repeatCount / 2;
+		for (int j = 0; j < repeatCount; ++j)
+		{
+			if (middleCount == 0)
+			{
+				std::cout << out << " ";
+				break;
+			}
+			if (j < middleCount)
+			{
+				std::cout << out << " ";
+				out <<= 1;
+			}
+			else
+			{
+				std::cout << out << " ";
+				out >>= 1;
+			}
+		}
+		std::cout << std::endl;
+	}
+}
