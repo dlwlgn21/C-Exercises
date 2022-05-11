@@ -1858,3 +1858,124 @@ void Print47()
 		std::cout << std::endl;
 	}
 }
+
+/*
+48. Write a program in C++ to display the pattern like pyramid using the alphabet.
+Sample Output:
+ Input the number of Letters (less than 26) in the Pyramid: 5
+		A
+	  A B A
+	A B C B A
+  A B C D C B A
+A B C D E D C B A
+
+*/
+
+void Print48()
+{
+	int rows;
+	InputNumber(rows, "Input the number of Letters (less than 26) in the Pyramid: ");
+	assert(rows <= 26);
+
+	for (int i = 0; i < rows; ++i)
+	{
+		int spaceCol = 2 * (rows - i - 1);
+		for (int j = 0; j < spaceCol; ++j)
+		{
+			std::cout << " ";
+		}
+
+		int outCol = (2 * i) + 1;
+		int half = outCol / 2;
+		char outChar = 'A';
+		for (int z = 0; z < outCol; ++z)
+		{
+			if (z >= half)
+			{
+				std::cout << outChar-- << " ";
+			}
+			else
+			{
+				std::cout << outChar++ << " ";
+			}
+		}
+		std::cout << std::endl;
+	}
+}
+
+/*
+49. Write a program in C++ to print a pyramid of digits as shown below for n number of lines.
+	1
+   232
+  34543
+ 4567654
+567898765
+Sample Output:
+ Input the number of rows: 5
+	1
+   232
+  34543
+ 4567654
+567898765
+
+*/
+
+void Print49()
+{
+	int rows;
+	InputNumber(rows, "Input the number of rows: ");
+
+	for (int i = 1; i <= rows; ++i)
+	{
+		for (int j = 0; j < rows - i; ++j)
+		{
+			std::cout << " ";
+		}
+		int out = i;
+		int outCol = (2 * i) - 1;
+		int half = outCol / 2;
+		for (int z = 0; z <= half; ++z)
+		{
+			std::cout << out++;
+		}
+		if (outCol != 1)
+		{
+			--out;
+			for (int z = half + 1; z < outCol; ++z)
+			{
+				std::cout << --out;
+			}
+		}
+
+
+		std::cout << std::endl;
+	}
+}
+
+/*
+50. Write a program in C++ to print a pattern like highest numbers of columns appear in first row.
+Sample Output:
+ Input the number of rows: 5
+12345
+2345
+345
+45
+5
+*/
+
+void Print50() 
+{
+	int rows;
+	InputNumber(rows, "Input the number of rows: ");
+
+	for (int i = 1; i <= rows; ++i)
+	{
+		for (int j = i; j <= rows; ++j)
+		{
+			std::cout << j;
+		}
+
+		std::cout << std::endl;
+	}
+
+}
