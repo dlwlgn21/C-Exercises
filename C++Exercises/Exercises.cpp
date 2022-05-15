@@ -2121,3 +2121,49 @@ void Print54()
 		std::cout << std::endl;
 	}
 }
+
+/*
+55. Write a program in C++ to display such a pattern for n number of rows using number. 
+Each row will contain odd numbers of number. 
+The first and last number of each row will be 1 and middle column will be the row number. 
+n numbers of columns will appear in 1st row.
+Sample Output:
+ Input number of rows: 7
+	 1234567654321
+	  12345654321
+	   123454321
+		1234321
+		 12321
+		  121
+		   1
+
+*/
+
+void Print55() 
+{
+	int rows;
+	InputNumber(rows, "Input number of rows: ");
+
+	for (int i = 0; i < rows; ++i)
+	{
+		for (int j = 0; j < i; ++j)
+		{
+			std::cout << " ";
+		}
+		int repeatCount { (2 * (rows - i)) - 1 };
+		int out{ 1 };
+		for (int j = 0; j < repeatCount; ++j)
+		{
+			if (j >= (repeatCount / 2))
+			{
+				std::cout << out--;
+			}
+			else
+			{
+				std::cout << out++;
+			}
+		}
+		std::cout << std::endl;
+
+	}
+}
