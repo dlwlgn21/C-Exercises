@@ -81,7 +81,7 @@ int main()
 
 	}
 #endif
-	Print55();
+	FindFirstLastDigitAndSum();
 
 }
 

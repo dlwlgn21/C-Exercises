@@ -2167,3 +2167,79 @@ void Print55()
 
 	}
 }
+/*
+56. Write a program in C++ to find the first and last digit of a number.
+Sample Output:
+Input any number: 5679
+The first digit of 5679 is: 5
+The last digit of 5679 is: 9
+
+*/
+void FindFirstLastDigitFromIntger()
+{
+	int num;
+	InputNumber(num, "Input any number: ");
+	int firstDigit = 0;
+	int lastDigit = num % 10;
+	int divideNum = num;
+	while (divideNum != 0)
+	{
+		if (divideNum < 10)
+		{
+			firstDigit = divideNum;
+			break;
+		}
+		divideNum /= 10;
+	}
+
+	if (firstDigit == lastDigit)
+	{
+		std::cout << "The first digit of " << num << " is: " << lastDigit << std::endl;
+		return;
+	}
+	
+	std::cout << "The first digit of " << num << " is: " << firstDigit << std::endl;
+	std::cout << "The last digit of " << num << " is: " << lastDigit << std::endl;
+
+
+}
+
+/*
+57. Write a program in C++ to find the sum of first and last digit of a number.
+Sample Output:
+Input any number: 12345
+The first digit of 12345 is: 1
+The last digit of 12345 is: 5
+The sum of first and last digit of 12345 is: 6
+*/
+
+void FindFirstLastDigitAndSum()
+{
+	int num;
+	InputNumber(num, "Input any number: ");
+	int dividedNum = num;
+	int firstDigit{};
+	int lastDigit = dividedNum % 10;
+	while (dividedNum != 0)
+	{
+		if (dividedNum < 10)
+		{
+			firstDigit = dividedNum;
+			break;
+		}
+		dividedNum /= 10;
+	}
+
+	if (firstDigit == lastDigit)
+	{
+		std::cout << "The first digit of " << num << " is: " << lastDigit << std::endl;
+		return;
+	}
+
+	std::cout << "The first digit of " << num << " is: " << firstDigit << std::endl;
+	std::cout << "The last digit of " << num << " is: " << lastDigit << std::endl;
+	std::cout << "The sum of first and last digit of " << num <<" is: " << firstDigit + lastDigit << std::endl;
+
+
+
+}

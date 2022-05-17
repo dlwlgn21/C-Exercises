@@ -61,3 +61,5 @@ void Print52();
 void Print53();
 void Print54();
 void Print55();
+void FindFirstLastDigitFromIntger();
+void FindFirstLastDigitAndSum();
