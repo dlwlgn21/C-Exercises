@@ -81,7 +81,6 @@ int main()
 
 	}
 #endif
-	FindFirstLastDigitAndSum();
-
+	FindFrequencyOfEachDigit();
 }
 

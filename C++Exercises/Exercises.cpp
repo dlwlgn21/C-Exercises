@@ -2239,7 +2239,95 @@ void FindFirstLastDigitAndSum()
 	std::cout << "The first digit of " << num << " is: " << firstDigit << std::endl;
 	std::cout << "The last digit of " << num << " is: " << lastDigit << std::endl;
 	std::cout << "The sum of first and last digit of " << num <<" is: " << firstDigit + lastDigit << std::endl;
-
-
-
 }
+/*
+58. Write a program in C++ to calculate product of digits of any number.
+Sample Output:
+Input a number: 3456
+The product of digits of 3456 is: 360
+*/
+
+void CalculateProductOfDigit()
+{
+	int num;
+	InputNumber(num, "Input a number: ");
+
+	int dividedNum = num;
+	int product = 1;
+	while (dividedNum != 0)
+	{
+		product *= dividedNum % 10;
+		dividedNum = dividedNum / 10;
+	}
+
+	std::cout << "The product of digits of " << num << " is: " << product << std::endl;
+}
+
+/*
+59. Write a program in C++ to 
+find the frequency of each digit in a given integer.
+Sample Output:
+Input any number: 122345
+The frequency of 0 = 0
+The frequency of 1 = 1
+The frequency of 2 = 2
+The frequency of 3 = 1
+The frequency of 4 = 1
+The frequency of 5 = 1
+The frequency of 6 = 0
+The frequency of 7 = 0
+The frequency of 8 = 0
+The frequency of 9 = 0
+
+*/
+void FindFrequencyOfEachDigit()
+{
+	const int TEN_DIGIT = 10;
+	int num;
+	InputNumber(num, "Input any number: ");
+	int digitArray[TEN_DIGIT]{};
+	int dividedNum = num;
+	while (dividedNum != 0)
+	{
+		switch (dividedNum % TEN_DIGIT)
+		{
+		case 0:
+			digitArray[0] += 1;
+			break;
+		case 1:
+			digitArray[1] += 1;
+			break;
+		case 2:
+			digitArray[2] += 1;
+			break;
+		case 3:
+			digitArray[3] += 1;
+			break;
+		case 4:
+			digitArray[4] += 1;
+			break;
+		case 5:
+			digitArray[5] += 1;
+			break;
+		case 6:
+			digitArray[6] += 1;
+			break;
+		case 7:
+			digitArray[7] += 1;
+			break;
+		case 8:
+			digitArray[8] += 1;
+			break;
+		case 9:
+			digitArray[9] += 1;
+			break;
+		}
+		dividedNum /= TEN_DIGIT;
+	}
+
+	for (int i = 0; i < TEN_DIGIT; ++i)
+	{
+		std::cout << "The frequency of " << i << " = " << digitArray[i] << std::endl;
+	}
+}
+

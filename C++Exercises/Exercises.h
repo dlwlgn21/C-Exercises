@@ -63,3 +63,5 @@ void Print54();
 void Print55();
 void FindFirstLastDigitFromIntger();
 void FindFirstLastDigitAndSum();
+void CalculateProductOfDigit();
+void FindFrequencyOfEachDigit();
