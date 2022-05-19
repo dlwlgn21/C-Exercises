@@ -2431,3 +2431,50 @@ void PrintASCII()
 	}
 
 }
+
+/*
+62. Write a program in C++ to find power of any number using for loop. 
+Sample Output:
+Input the base: 2
+Input the exponent: 5
+2 ^ 5 = 32
+*/
+
+void FindPower()
+{
+	int base;
+	InputNumber(base, "Input the base: ");
+	int exponent;
+	InputNumber(exponent, "Input the base: ");
+	int outBase = base;
+	for (int i = 0; i < exponent - 1; ++i)
+	{
+		base *= outBase;
+	}
+
+	std::cout << outBase << " ^ " << exponent << " = " << base << std::endl;
+}
+
+/*
+63. Write a program in C++ to enter any number and print all factors of the number.
+Sample Output:
+Input a number: 63
+The factors are: 1 3 7 9 21 63
+*/
+
+void PrintAllFactors()
+{
+	int num;
+	InputNumber(num, "Input a number: ");
+
+	std::cout << "The factors are: ";
+
+	for (int i = 1; i <= num; ++i)
+	{
+		if (num % i == 0)
+		{
+			std::cout << i << " ";
+		}
+	}
+
+}

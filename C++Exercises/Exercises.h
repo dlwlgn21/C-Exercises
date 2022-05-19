@@ -67,3 +67,5 @@ void CalculateProductOfDigit();
 void FindFrequencyOfEachDigit();
 void PrintNumberInWord();
 void PrintASCII();
+void FindPower();
+void PrintAllFactors();

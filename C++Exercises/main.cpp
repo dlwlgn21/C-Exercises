@@ -81,7 +81,7 @@ int main()
 
 	}
 #endif
-	PrintASCII();
+	PrintAllFactors();
 
 }
 
