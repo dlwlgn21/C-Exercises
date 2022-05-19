@@ -81,6 +81,7 @@ int main()
 
 	}
 #endif
-	FindFrequencyOfEachDigit();
+	PrintASCII();
+
 }
 

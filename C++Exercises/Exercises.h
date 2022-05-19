@@ -65,3 +65,5 @@ void FindFirstLastDigitFromIntger();
 void FindFirstLastDigitAndSum();
 void CalculateProductOfDigit();
 void FindFrequencyOfEachDigit();
+void PrintNumberInWord();
+void PrintASCII();

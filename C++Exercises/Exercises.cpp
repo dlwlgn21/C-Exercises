@@ -2331,3 +2331,103 @@ void FindFrequencyOfEachDigit()
 	}
 }
 
+/*
+60. Write a program in C++ to input any number and print it in words.
+Sample Output:
+Input any number: 8309
+Eight Three Zero Nine
+*/
+
+static void PrintNumberInWordRecursive(int num)
+{
+	if (num <= 0)
+	{
+		return;
+	}
+
+	PrintNumberInWordRecursive(num / 10);
+	switch (num % 10)
+	{
+	case 0:
+		std::cout << "Zero ";
+		break;
+	case 1:
+		std::cout << "One ";
+		break;
+	case 2:
+		std::cout << "Two ";
+		break;
+	case 3:
+		std::cout << "Three ";
+		break;
+	case 4:
+		std::cout << "Four ";
+		break;
+	case 5:
+		std::cout << "Five ";
+		break;
+	case 6:
+		std::cout << "Six ";
+		break;
+	case 7:
+		std::cout << "Seven ";
+		break;
+	case 8:
+		std::cout << "Eight ";
+		break;
+	case 9:
+		std::cout << "Nine ";
+		break;
+	}
+}
+
+void PrintNumberInWord()
+{
+	int num;
+	InputNumber(num, "Input any number: ");
+
+	PrintNumberInWordRecursive(num);
+}
+
+
+/*
+61. Write a program in C++ to print
+all ASCII character with their values.
+Sample Output:
+Input the starting value for ASCII characters: 65
+Input the ending value for ASCII characters: 75
+The ASCII characters:
+65 --> A
+66 --> B
+67 --> C
+68 --> D
+69 --> E
+70 --> F
+71 --> G
+72 --> H
+73 --> I
+74 --> J
+75 --> K
+*/
+
+void PrintASCII()
+{
+	int startNum;
+	int endNum;
+	InputNumber(startNum, "Input the starting value for ASCII characters: ");
+	if (startNum > 127 || startNum < 32)
+	{
+		startNum = 32;
+	}
+	InputNumber(endNum, "Input the ending value for ASCII characters: ");
+	if (endNum > 127 || endNum < startNum)
+	{
+		endNum = startNum + 1;
+	}
+	while (startNum <= endNum)
+	{
+		std::cout << startNum << " --> " << static_cast<char>(startNum) << std::endl;
+		++startNum;
+	}
+
+}
