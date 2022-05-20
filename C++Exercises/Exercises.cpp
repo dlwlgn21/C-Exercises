@@ -2478,3 +2478,43 @@ void PrintAllFactors()
 	}
 
 }
+
+/*
+64. Write a program in C++ to find one's complement of a binary number.
+Sample Output:
+Input a 8 bit binary value: 10100101
+The original binary = 10100101
+After ones complement the number = 01011010
+
+*/
+void PrintOnesComplementRecursive(int num)
+{
+	if (num <= 0)
+	{
+		return;
+	}
+
+	PrintOnesComplementRecursive(num / 10);
+	std::cout << !(num % 2);
+}
+void PrintOnesComplement()
+{
+	int num;
+	InputNumber(num, "Input a 8 bit binary value: ");
+
+	std::cout << "The original binary = " << num << std::endl;
+	std::cout << "After ones complement the number = ";
+	
+	PrintOnesComplementRecursive(num);
+
+}
+
+/*
+65. Write a program in C++ to find two's complement of a binary number.
+Sample Output:
+Input a 8 bit binary value: 01101110
+The original binary = 01101110
+After ones complement the value = 10010001
+After twos complement the value = 10010010
+*/
+

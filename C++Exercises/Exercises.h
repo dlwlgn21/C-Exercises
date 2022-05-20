@@ -69,3 +69,4 @@ void PrintNumberInWord();
 void PrintASCII();
 void FindPower();
 void PrintAllFactors();
+void PrintOnesComplement();

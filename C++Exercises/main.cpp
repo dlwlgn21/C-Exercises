@@ -81,7 +81,8 @@ int main()
 
 	}
 #endif
-	PrintAllFactors();
+	PrintOnesComplement();
+
 
 }
 
