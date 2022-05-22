@@ -70,3 +70,4 @@ void PrintASCII();
 void FindPower();
 void PrintAllFactors();
 void PrintOnesComplement();
+void PrintTwoComplement();

@@ -2518,3 +2518,52 @@ After ones complement the value = 10010001
 After twos complement the value = 10010010
 */
 
+void PrintTwoComplement()
+{
+	const int ONE_BYTE_SIZE = 8;
+	char byte[ONE_BYTE_SIZE + 1];
+	std::cout << "Input a 8 bit binary value: " << std::endl;
+	std::cin >> byte;
+	std::cout << "The original binary = " << byte << std::endl;
+
+	for (int i = 0; i < ONE_BYTE_SIZE; ++i)
+	{
+		if (byte[i] == '1')
+		{
+			byte[i] = '0';
+		}
+		else if (byte[i] == '0'
+		{
+			byte[i] = '1';
+		}
+		else
+		{
+			assert(false);
+		}
+	}
+
+	std::cout << "After ones complement the value = " << byte << std::endl;
+
+	/* Happy Path */
+	if (byte[ONE_BYTE_SIZE - 1] == '0')
+	{
+		byte[ONE_BYTE_SIZE - 1] = '1';
+		std::cout << "After twos complement the value = " << byte << std::endl;
+		return;
+	}
+
+	byte[ONE_BYTE_SIZE - 1] = '0';
+	for (int i = ONE_BYTE_SIZE - 2; i >= 0; --i)
+	{
+		if (byte[i] == '1')
+		{
+			byte[i] = '0';
+			continue;
+		}
+		byte[i] = '1';
+		break;
+	}
+	std::cout << "After twos complement the value = " << byte << std::endl;
+
+}
+

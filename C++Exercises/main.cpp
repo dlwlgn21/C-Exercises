@@ -81,8 +81,7 @@ int main()
 
 	}
 #endif
-	PrintOnesComplement();
-
+	PrintTwoComplement();
 
 }
 
