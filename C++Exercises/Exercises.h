@@ -71,3 +71,4 @@ void FindPower();
 void PrintAllFactors();
 void PrintOnesComplement();
 void PrintTwoComplement();
+void PrintCheckBoard();

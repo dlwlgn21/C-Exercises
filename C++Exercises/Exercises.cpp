@@ -2532,7 +2532,7 @@ void PrintTwoComplement()
 		{
 			byte[i] = '0';
 		}
-		else if (byte[i] == '0'
+		else if (byte[i] == '0')
 		{
 			byte[i] = '1';
 		}
@@ -2567,3 +2567,49 @@ void PrintTwoComplement()
 
 }
 
+/*
+66. Write code to create 
+a checkerboard pattern with the words "black" and "white".
+Sample Output:
+Input number of rows: 5
+black-white-black-white-black
+white-black-white-black-white
+black-white-black-white-black
+white-black-white-black-white
+black-white-black-white-black
+*/
+
+void PrintCheckBoard()
+{
+	int row;
+	InputNumber(row, "Input number of rows: ");
+	const char* words[] = { "black", "white" };
+	char delim = '-';
+	for (int i = 0; i < row; ++i)
+	{
+		for (int j = 0; j < row; ++j)
+		{
+			if ((i & 0x1) == 0) 
+			{
+				if (j == row - 1)
+				{
+					std::cout << words[j % 2] << std::endl;
+					break;
+				}
+				std::cout << words[j % 2];
+				std::cout << delim;
+			}
+			else
+			{
+				if (j == row - 1)
+				{
+					std::cout << words[(j + 1) % 2] << std::endl;;
+					break;
+				}
+				std::cout << words[(j + 1) % 2];
+				std::cout << delim;
+			}
+
+		}
+	}
+}
