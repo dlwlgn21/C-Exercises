@@ -1,7 +1,52 @@
 #include <iostream>
 #include <vector>
 #include <random>
+#include <iomanip>
 #include "Exercises.h"
+
+void MyBubbleSort(int* arr, int len)
+{
+	int length = len - 1;
+	for (int i = 0; i < length; ++i)
+	{
+		for (int j = 0; j < length - i; ++j)
+		{
+			if (arr[j] > arr[j + 1])
+			{
+				int tmp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = tmp;
+			}
+			std::cout << arr[length - i] << std::endl;
+		}
+	}
+}
+
+int GetFactorialRecursive(int n)
+{
+	if (n == 0)
+	{
+		return 1;
+	}
+	if (n == 1)
+	{
+		return 1;
+	}
+	return GetFactorialRecursive(n - 1) * n;
+}
+
+int ReverseNumber(int a)
+{
+	int res{};
+	int manip = 100;
+	for (int i = 0; i < 3; ++i)
+	{
+		res += manip * (a % 10);
+		a /= 10;
+		manip /= 10;
+	}
+	return res;
+}
 
 static bool BinarySearchRecursiveTwo(unsigned int arry[], int lIdx, int rIdx, int value)
 {
@@ -44,6 +89,29 @@ static void BubbleSort(unsigned int arry[], size_t size)
 
 }
 
+void PrintMax()
+{
+	int arr[9];
+	int max;
+	for (int i = 0; i < 9; ++i)
+	{
+		std::cin >> arr[i];
+	}
+	max = arr[0];
+	int count{ 1 };
+	for (int j = 0; j < 9; ++j)
+	{
+		if (max < arr[j])
+		{
+			max = arr[j];
+			count = j + 1;
+		}
+
+	}
+	std::cout << max << std::endl;
+	std::cout << count << std::endl;
+}
+
 int main()
 {
 #if 0
@@ -81,8 +149,22 @@ int main()
 
 	}
 #endif
-	PrintCheckBoard();
+	const int SIZE = 16;
+	int arry[SIZE] =
+	{
+		2, 72, 1, 32, 27, 35, 11, 25,
+		12, 15, 85, 22, 98, 9, 24, 7
+	};
 
+	MyBubbleSort(arry, SIZE);
+	for (int i = 0; i < SIZE; ++i)
+	{
+		std::cout << arry[i] << " ";
+	}
+	std::cout << std::endl;
+
+
+    return 0;
 
 }
 
