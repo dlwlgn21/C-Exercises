@@ -4,6 +4,24 @@
 #include <iomanip>
 #include "Exercises.h"
 
+
+
+// Initialization of base class
+class Base {
+public:
+	virtual ~Base() = 0;
+	// Pure virtual destructor
+};
+Base::~Base() // Explicit destructor call
+{
+	std::cout << "Pure virtual destructor is called";
+}
+// Initialization of derived class
+class Derived : public Base {
+public:
+	~Derived() { std::cout << "~Derived() is executed"; }
+};
+
 void MyBubbleSort(int* arr, int len)
 {
 	int length = len - 1;
@@ -163,7 +181,8 @@ int main()
 	}
 	std::cout << std::endl;
 
-
+	Base* b = new Derived();
+	delete b;
     return 0;
 
 }
